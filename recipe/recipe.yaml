@@ -2,15 +2,15 @@ schema_version: 1
 
 context:
   name: azure-mgmt-managementgroups
-  version: 1.0.0
+  version: 1.1.0
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/azure-mgmt-managementgroups-${{ version }}.zip
-  sha256: bab9bd532a1c34557f5b0ab9950e431e3f00bb96e8a3ce66df0f6ce2ae19cd73
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: e6199baf118890ba2bda35dda83a88861c0b1bbef126311b20ec12eed9681951
 
 build:
   number: 0
@@ -24,10 +24,9 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - msrest >=0.6.21
-    - azure-common >=1.1,<2.dev0
-    - azure-mgmt-core >=1.2.0,<2.0.0
-
+    - azure-mgmt-core >=1.6.0
+    - isodate >=0.6.1
+    - typing_extensions >=4.6.0
 tests:
   - python:
       imports:
