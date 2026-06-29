@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: azure-mgmt-managementgroups
-  version: 1.1.0
+  version: "2.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: e6199baf118890ba2bda35dda83a88861c0b1bbef126311b20ec12eed9681951
+  sha256: 02d008fadfd7610b1c7059e3c3a8a33dedaef4b654749b81978b437baf264f1d
 
 build:
   number: 0
